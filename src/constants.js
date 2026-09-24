@@ -11,6 +11,7 @@ export const waLink = (message = DEFAULT_MESSAGE) =>
   `${WA_BASE}?text=${encode(message)}`;
 
 export const NAV_LINKS = [
+  { label: "Beranda", href: "#top" },
   { label: "Produk", href: "#produk" },
   { label: "Kegunaan", href: "#kegunaan" },
   { label: "Tentang", href: "#tentang" },

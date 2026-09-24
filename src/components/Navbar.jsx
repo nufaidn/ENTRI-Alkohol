@@ -25,14 +25,25 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const ids = ["produk", "kegunaan", "keunggulan", "tentang", "faq"];
+    const ids = ["top", "produk", "kegunaan", "keunggulan", "tentang", "faq"];
     const observer = new IntersectionObserver(
       (entries) => {
+        let mostVisible = null;
+        let maxVisibility = 0;
+        
         entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
+          if (entry.isIntersecting) {
+            const ratio = entry.intersectionRatio;
+            if (ratio > maxVisibility) {
+              maxVisibility = ratio;
+              mostVisible = entry.target.id;
+            }
+          }
         });
+        
+        if (mostVisible) setActive(mostVisible);
       },
-      { rootMargin: "-40% 0px -55% 0px", threshold: 0 }
+      { rootMargin: "-50% 0px -50% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
     );
     ids.forEach((id) => {
       const el = document.getElementById(id);

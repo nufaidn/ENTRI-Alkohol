@@ -5,7 +5,7 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-wool-50"
+      className="relative overflow-hidden bg-wool-50 min-h-screen flex items-center"
       aria-label="ENTRI Alkohol — perkenalan produk"
     >
       {/* Background image + aurora + grid backdrop */}
@@ -42,7 +42,7 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-[1200px] px-5 pb-16 pt-36 sm:px-8 md:pt-40 lg:pb-24 lg:pt-44">
+      <div className="relative mx-auto w-full max-w-[1200px] px-5 py-16 sm:px-8 lg:py-24">
         {/* Left: copy */}
         <div className="relative z-10 max-w-xl">
           <Reveal direction="up" delay={0}>
@@ -54,17 +54,17 @@ export default function Hero() {
 
           <Reveal direction="up" delay={80}>
             <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.06] tracking-[-0.03em] text-ink-950 sm:text-5xl lg:text-[3.5rem]">
-              Alcohol Berkualitas untuk
+              Pilihan Tepat
               <br />
-              <span className="text-gradient">Kebutuhan Profesional</span>
+              <span className="text-gradient">Kualitas Terjaga</span>
             </h1>
           </Reveal>
 
           <Reveal direction="up" delay={160}>
             <p className="mt-6 text-base leading-relaxed text-ink-600 sm:text-lg">
-              ENTRI Alkohol hadir dalam konsentrasi 70% dan 96% untuk sanitasi,
-              sterilisasi alat, hingga kebutuhan teknis — dengan pilihan kemasan
-              dari 1 hingga 200 Liter.
+              ENTRI Alkohol hadir dalam konsentrasi 70% dan <br /> 
+              96% untuk sanitasi, sterilisasi alat, hingga kebutuhan <br /> 
+              teknis. Dengan pilihan kemasan dari 1 hingga 200 Liter.
             </p>
           </Reveal>
 
@@ -75,7 +75,6 @@ export default function Hero() {
                 className="ripple-host inline-flex items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-600 to-brand-500 px-7 py-3.5 text-base font-semibold text-white shadow-glow transition-all duration-200 hover:-translate-y-0.5 hover:shadow-brand-md active:scale-95"
               >
                 Tentang Kami
-                <FaArrowDown className="text-sm" aria-hidden="true" />
               </a>
             </div>
           </Reveal>
