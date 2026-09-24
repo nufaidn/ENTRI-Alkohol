@@ -12,13 +12,14 @@ export default function Concentration() {
               Empat Pilihan Volume, <span className="text-gradient">Satu Kualitas</span>
             </>
           }
-          description="ENTRI menyediakan alcohol dalam empat pilihan volume — dari 1 Liter hingga 200 Liter — masing-masing dirancang untuk kebutuhan yang sesuai dengan penggunaannya."
+          description="ENTRI menyediakan alcohol dalam empat pilihan volume — dari 1 Liter hingga 200 Liter. Masing-masing dirancang untuk kebutuhan yang sesuai dengan penggunaannya."
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {PRODUCTS.map((product) => (
             <article
               key={product.id}
+              style={product.id === "200 L" ? { width: "calc(100% + 80px)" } : {}}
               className="glow-ring group relative flex flex-col overflow-hidden rounded-3xl border border-ink-200/70 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-lift"
             >
               <div className="relative overflow-hidden bg-gradient-to-b from-wool-100 to-wool-50">
@@ -42,43 +43,17 @@ export default function Concentration() {
                 </span>
               </div>
 
-              <div className="flex flex-1 flex-col p-6">
+              <div className="flex flex-1 flex-col items-between justify-between p-6">
                 <h3 className="font-display text-xl font-bold text-ink-950">
                   {product.name}
                 </h3>
-                <p className="mt-1 text-sm font-semibold text-brand-600">
-                  {product.tagline}
-                </p>
-
-                <ul className="mt-4 space-y-2">
-                  {product.use.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-ink-700">
-                      <span className="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600">
-                        <svg viewBox="0 0 20 20" fill="currentColor" className="h-2.5 w-2.5" aria-hidden="true">
-                          <path
-                            fillRule="evenodd"
-                            d="M16.7 5.3a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 0 1 1.4-1.4L9 11.6l6.3-6.3a1 1 0 0 1 1.4 0Z"
-                            clipRule="evenodd"
-                          />
-                        </svg>
-                      </span>
-                      {item}
-                    </li>
-                  ))}
-                </ul>
 
                 <a
                   href={`#/produk/${slugify(product.id)}`}
                   aria-label={`Lihat detail ${product.name}`}
-                  className="ripple-host mt-auto inline-flex h-11 w-11 items-center justify-center self-end rounded-full bg-ink-950 text-white transition-all duration-200 hover:bg-gradient-to-r hover:from-brand-600 hover:to-brand-500 hover:shadow-glow active:scale-95"
+                  className="ripple-host mt-auto inline-flex items-center gap-2 text-sm font-semibold text-ink-700 transition-all duration-200 hover:text-brand-600 active:scale-95"
                 >
-                  <svg viewBox="0 0 20 20" fill="currentColor" className="h-5 w-5" aria-hidden="true">
-                    <path
-                      fillRule="evenodd"
-                      d="M7.21 14.77a.75.75 0 0 1 0-1.06L11.9 9 7.2 4.29a.75.75 0 1 1 1.06-1.06L13.54 8.47a.75.75 0 0 1 0 1.06l-5.27 5.24a.75.75 0 0 1-1.06 0Z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
+                  Lihat Selengkapnya →
                 </a>
               </div>
             </article>

@@ -14,7 +14,7 @@ export default function Hero() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://res.cloudinary.com/yy5fen2q/image/upload/v1790222115/bg-image-ENTRI_qinmwm.png')",
+              "url('https://res.cloudinary.com/yy5fen2q/image/upload/q_auto,f_auto,w_1600/v1790222115/bg-image-ENTRI_qinmwm.png')",
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-wool-50/25 via-transparent to-transparent" />

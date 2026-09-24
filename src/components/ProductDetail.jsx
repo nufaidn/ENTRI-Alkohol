@@ -55,19 +55,10 @@ export default function ProductDetail({ product }) {
             </Reveal>
 
             <Reveal direction="up" delay={120}>
-              <ul className="mt-8 space-y-3">
+              <ul className="mt-8 space-y-2">
                 {product.use.map((item) => (
-                  <li key={item} className="flex items-start gap-3 text-base text-ink-700">
-                    <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-brand-100 text-brand-600">
-                      <svg viewBox="0 0 20 20" fill="currentColor" className="h-3 w-3" aria-hidden="true">
-                        <path
-                          fillRule="evenodd"
-                          d="M16.7 5.3a1 1 0 0 1 0 1.4l-7 7a1 1 0 0 1-1.4 0l-3.5-3.5a1 1 0 0 1 1.4-1.4L9 11.6l6.3-6.3a1 1 0 0 1 1.4 0Z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </span>
-                    {item}
+                  <li key={item} className="text-base text-ink-700">
+                    • {item}
                   </li>
                 ))}
               </ul>
