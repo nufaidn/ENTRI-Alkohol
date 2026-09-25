@@ -160,7 +160,7 @@ export default function Navbar() {
       {/* Mobile drawer backdrop */}
       <div
         onClick={() => setIsOpen(false)}
-        className={`fixed inset-0 z-[-1] bg-ink-950/30 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-ink-950/30 backdrop-blur-sm transition-opacity duration-300 lg:hidden ${
           isOpen ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
         aria-hidden="true"
@@ -169,12 +169,13 @@ export default function Navbar() {
       {/* Mobile drawer */}
       <div
         id="mobile-menu"
-        className={`fixed bottom-0 right-0 top-0 z-40 w-[300px] max-w-[85vw] transform bg-white/95 shadow-2xl backdrop-blur-xl transition-transform duration-300 ease-out lg:hidden ${
+        className={`fixed right-0 top-0 z-50 h-screen w-[300px] max-w-[85vw] transform bg-white shadow-2xl transition-transform duration-300 ease-out lg:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex h-full flex-col p-6">
-          <div className="mb-8 flex items-center justify-between">
+        <div className="flex h-full flex-col">
+          {/* Header */}
+          <div className="flex items-center justify-between border-b border-ink-100 px-6 py-4">
             <img
               src="/img/alkohol/logo.png"
               alt="Logo ENTRI"
@@ -185,23 +186,24 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="flex h-9 w-9 items-center justify-center rounded-full border border-ink-200 text-ink-600 transition-colors hover:border-brand-300 hover:text-brand-600"
+              className="flex h-9 w-9 items-center justify-center rounded-full text-ink-600 hover:bg-ink-100"
               aria-label="Tutup menu"
             >
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+              <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
                 <line x1="6" y1="6" x2="18" y2="18" />
                 <line x1="18" y1="6" x2="6" y2="18" />
               </svg>
             </button>
           </div>
 
-          <nav className="flex flex-col gap-1" aria-label="Navigasi mobile">
+          {/* Navigation */}
+          <nav className="space-y-1 px-4 py-4" aria-label="Navigasi mobile">
             {NAV_LINKS.map((link, i) => (
               <a
                 key={link.href}
                 href={link.href}
                 onClick={() => setIsOpen(false)}
-                className="rounded-xl px-4 py-3 text-base font-semibold text-ink-800 transition-all duration-300 hover:bg-brand-50 hover:text-brand-600"
+                className="block px-4 py-2.5 text-base font-medium text-ink-700 transition-colors hover:text-brand-600 hover:bg-brand-50 rounded-lg"
                 style={{ transitionDelay: `${isOpen ? i * 40 : 0}ms`, opacity: isOpen ? 1 : 0, transform: isOpen ? "translateX(0)" : "translateX(16px)" }}
               >
                 {link.label}
@@ -209,20 +211,21 @@ export default function Navbar() {
             ))}
           </nav>
 
-          <div className="mt-auto space-y-4 pt-8">
+          {/* CTA Button - Right below FAQ */}
+          <div className="px-4 py-4">
             <a
               href={waLink()}
               target="_blank"
               rel="noopener noreferrer"
-              className="ripple-host flex w-full items-center justify-center gap-2 rounded-full bg-gradient-to-r from-brand-600 to-brand-500 px-5 py-3.5 text-base font-semibold text-white shadow-glow transition-all duration-200 hover:-translate-y-0.5 active:scale-95"
+              className="ripple-host flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-brand-600 to-brand-500 px-5 py-3 text-base font-semibold text-white shadow-glow transition-all duration-200 hover:-translate-y-0.5 active:scale-95"
             >
               <FaWhatsapp className="text-lg" aria-hidden="true" />
               Hubungi Kami
             </a>
-            <p className="text-center text-xs text-ink-500">
-              WhatsApp: 085174394123
-            </p>
           </div>
+
+          {/* Spacer to push content up */}
+          <div className="flex-1" />
         </div>
       </div>
     </header>

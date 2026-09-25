@@ -15,6 +15,7 @@ export default function Hero() {
           style={{
             backgroundImage:
               "url('https://res.cloudinary.com/yy5fen2q/image/upload/q_auto,f_auto,w_1600/v1790222115/bg-image-ENTRI_qinmwm.png')",
+            backgroundPosition: "35% center"
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-wool-50/25 via-transparent to-transparent" />
@@ -42,9 +43,9 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-[1200px] px-5 py-16 sm:px-8 lg:py-24">
+      <div className="relative mx-auto w-full max-w-[1200px] px-5 py-8 sm:px-8 lg:py-16">
         {/* Left: copy */}
-        <div className="relative z-10 max-w-xl">
+        <div className="relative z-10 max-w-2xl">
           <Reveal direction="up" delay={0}>
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-200/70 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand-700 shadow-brand-sm backdrop-blur-md">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-500" aria-hidden="true" />
@@ -53,7 +54,7 @@ export default function Hero() {
           </Reveal>
 
           <Reveal direction="up" delay={80}>
-            <h1 className="mt-6 font-display text-4xl font-extrabold leading-[1.06] tracking-[-0.03em] text-ink-950 sm:text-5xl lg:text-[3.5rem]">
+            <h1 className="mt-6 font-display text-5xl font-extrabold leading-[1.06] tracking-[-0.03em] text-ink-950 sm:text-5xl lg:text-[3.5rem]">
               Pilihan Tepat
               <br />
               <span className="text-gradient">Kualitas Terjaga</span>
@@ -61,7 +62,10 @@ export default function Hero() {
           </Reveal>
 
           <Reveal direction="up" delay={160}>
-            <p className="mt-6 text-base leading-relaxed text-ink-600 sm:text-lg">
+            <p className="mt-6 text-base leading-relaxed text-ink-800 sm:text-lg" style={{ 
+              textShadow: "0 0 8px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(11, 15, 23, 0.3)",
+              paintOrder: "stroke fill"
+            }}>
               ENTRI Alkohol hadir dalam konsentrasi 70% dan <br /> 
               96% untuk sanitasi, sterilisasi alat, hingga kebutuhan <br /> 
               teknis. Dengan pilihan kemasan dari 1 hingga 200 Liter.
