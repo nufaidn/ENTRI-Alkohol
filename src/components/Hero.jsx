@@ -5,11 +5,11 @@ export default function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-wool-50 min-h-screen flex items-center"
+      className="relative w-screen overflow-hidden bg-wool-50 min-h-screen flex items-center"
       aria-label="ENTRI Alkohol — perkenalan produk"
     >
       {/* Background image + aurora + grid backdrop */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -19,14 +19,14 @@ export default function Hero() {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-wool-50/25 via-transparent to-transparent" />
-        <div className="mesh-blob -left-40 top-0 h-[460px] w-[460px] bg-brand-300/15" />
+        <div className="mesh-blob -left-40 top-0 h-[460px] w-[460px] bg-brand-300/15" style={{ clipPath: "inset(0)" }} />
         <div
           className="mesh-blob -right-32 -top-24 h-[520px] w-[520px] bg-brand-400/10"
-          style={{ animationDelay: "-5s" }}
+          style={{ animationDelay: "-5s", clipPath: "inset(0)" }}
         />
         <div
           className="mesh-blob bottom-[-35%] left-1/4 h-[420px] w-[420px] bg-ink-300/15"
-          style={{ animationDelay: "-9s" }}
+          style={{ animationDelay: "-9s", clipPath: "inset(0)" }}
         />
         <div className="absolute inset-0 bg-[radial-gradient(60%_50%_at_78%_20%,rgb(244_81_30/0.10),transparent_70%)]" />
         <div

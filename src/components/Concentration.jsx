@@ -16,12 +16,15 @@ export default function Concentration() {
         />
 
         <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {PRODUCTS.map((product) => (
-            <article
-              key={product.id}
-              style={product.id === "200 L" ? { width: "calc(100% + 80px)" } : {}}
-              className="glow-ring group relative flex flex-col overflow-hidden rounded-3xl border border-ink-200/70 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-lift"
-            >
+          {PRODUCTS.map((product) => {
+            const is200L = product.id === "200 L";
+            return (
+              <article
+                key={product.id}
+                className={`glow-ring group relative flex flex-col overflow-hidden rounded-3xl border border-ink-200/70 bg-white shadow-soft transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-200 hover:shadow-lift ${
+                  is200L ? "lg:w-[calc(100%+80px)]" : ""
+                }`}
+              >
               <div className="relative overflow-hidden bg-gradient-to-b from-wool-100 to-wool-50">
                 <div
                   aria-hidden="true"
@@ -56,8 +59,9 @@ export default function Concentration() {
                   Lihat Selengkapnya →
                 </a>
               </div>
-            </article>
-          ))}
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>
