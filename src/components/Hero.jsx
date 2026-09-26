@@ -1,7 +1,17 @@
 import { FaArrowDown } from "react-icons/fa";
+import { useEffect, useState } from "react";
 import Reveal from "./Reveal";
 
 export default function Hero() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <section
       id="top"
@@ -14,8 +24,8 @@ export default function Hero() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://res.cloudinary.com/yy5fen2q/image/upload/q_auto,f_auto,w_1600/v1790222115/bg-image-ENTRI_qinmwm.png')",
-            backgroundPosition: "35% center"
+              "url('https://res.cloudinary.com/yy5fen2q/image/upload/v1790396723/bgimageherosection_vx2gme.jpg')",
+            backgroundPosition: isMobile ? "50% center" : "35% center"
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-wool-50/25 via-transparent to-transparent" />
@@ -43,9 +53,9 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative mx-auto w-full max-w-[1200px] px-5 py-8 sm:px-8 lg:py-16">
+      <div className="relative mx-auto w-full max-w-[1200px] px-5 py-8 sm:px-8 lg:py-16 sm:overflow-visible overflow-visible">
         {/* Left: copy */}
-        <div className="relative z-10 max-w-2xl">
+        <div className="relative z-10 max-w-full sm:max-w-2xl">
           <Reveal direction="up" delay={0}>
             <span className="inline-flex items-center gap-2 rounded-full border border-brand-200/70 bg-white/70 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-brand-700 shadow-brand-sm backdrop-blur-md">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-500" aria-hidden="true" />
@@ -62,13 +72,13 @@ export default function Hero() {
           </Reveal>
 
           <Reveal direction="up" delay={160}>
-            <p className="mt-6 text-base leading-relaxed text-ink-800 sm:text-lg" style={{ 
+            <p className="mt-6 text-base leading-relaxed text-ink-800 sm:text-lg max-w-2xl" style={{ 
               textShadow: "0 0 8px rgba(255, 255, 255, 0.8), 0 2px 4px rgba(11, 15, 23, 0.3)",
-              paintOrder: "stroke fill"
+              paintOrder: "stroke fill",
+              textAlign: "justify"
             }}>
-              ENTRI Alkohol hadir dalam konsentrasi 70% dan <br /> 
-              96% untuk sanitasi, sterilisasi alat, hingga kebutuhan <br /> 
-              teknis. Dengan pilihan kemasan dari 1 hingga 200 Liter.
+              <span className="sm:hidden block">ENTRI Alkohol hadir dalam konsentrasi 70% dan 96% untuk sanitasi, sterilisasi alat, hingga kebutuhan teknis. Dengan pilihan kemasan dari 1 hingga 200 Liter.</span>
+              <span className="hidden sm:inline">ENTRI Alkohol hadir dalam konsentrasi 70% dan <br /> 96% untuk sanitasi, sterilisasi alat, hingga kebutuhan <br /> teknis. Dengan pilihan kemasan dari 1 hingga 200 Liter.</span>
             </p>
           </Reveal>
 

@@ -4,7 +4,7 @@ export const PRODUCTS = [
   {
     id: "1 L",
     name: "ENTRI Alkohol 1 Liter",
-    image: "https://res.cloudinary.com/yy5fen2q/image/upload/q_auto,f_auto/v1790150025/ENTRIALKOHOL1L-removebg-preview_l0yzxf.png",
+    image: "https://res.cloudinary.com/yy5fen2q/image/upload/v1790397824/botol1L_po1hml.png",
     alt: "ENTRI Alkohol 70% kemasan 1 Liter",
     tagline: "Kemasan praktis untuk kebutuhan harian",
     description:
@@ -18,7 +18,7 @@ export const PRODUCTS = [
   {
     id: "5 L",
     name: "ENTRI Alkohol 5 Liter",
-    image: "/img/alkohol/5l.webp",
+    image: "https://res.cloudinary.com/yy5fen2q/image/upload/v1790397825/drigen5L_wxfvbr.png",
     alt: "ENTRI Alkohol 96% kemasan 5 Liter",
     tagline: "Ukuran menengah yang serbaguna",
     description:
@@ -32,7 +32,7 @@ export const PRODUCTS = [
   {
     id: "20 L",
     name: "ENTRI Alkohol 20 Liter",
-    image: "https://res.cloudinary.com/yy5fen2q/image/upload/q_auto,f_auto/v1790150025/ENTRIALKOHOL20L-removebg-preview_llyrqi.png",
+    image: "https://res.cloudinary.com/yy5fen2q/image/upload/v1790397825/drigen20L_plpot1.png",
     alt: "ENTRI Alkohol 70% kemasan 20 Liter",
     tagline: "Volume besar untuk operasional usaha",
     description:
@@ -46,7 +46,7 @@ export const PRODUCTS = [
   {
     id: "200 L",
     name: "ENTRI Alkohol 200 Liter",
-    image: "https://res.cloudinary.com/yy5fen2q/image/upload/q_auto,f_auto/v1790150025/ENTRIALKOHOL200L-removebg-preview_rgzkq6.png",
+    image: "https://res.cloudinary.com/yy5fen2q/image/upload/v1790397824/drum200L_qnjzxg.png",
     alt: "ENTRI Alkohol 96% kemasan 200 Liter",
     tagline: "Skala besar untuk kebutuhan industri",
     description:
