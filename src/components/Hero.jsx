@@ -25,7 +25,7 @@ export default function Hero() {
           style={{
             backgroundImage:
               "url('https://res.cloudinary.com/yy5fen2q/image/upload/v1790581452/tampilan_r00o1x.png')",
-            backgroundPosition: isMobile ? "50% center" : "35% center"
+            backgroundPosition: isMobile ? "87% center" : "100% center"
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-wool-50/25 via-transparent to-transparent" />
