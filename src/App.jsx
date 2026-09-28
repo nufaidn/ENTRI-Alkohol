@@ -3,7 +3,6 @@ import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Concentration from "./components/Concentration";
 import UseCases from "./components/UseCases";
-import Packaging from "./components/Packaging";
 import Why from "./components/Why";
 import Company from "./components/Company";
 import FAQ from "./components/FAQ";

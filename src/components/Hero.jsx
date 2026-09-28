@@ -24,7 +24,7 @@ export default function Hero() {
           className="absolute inset-0 bg-cover bg-center"
           style={{
             backgroundImage:
-              "url('https://res.cloudinary.com/yy5fen2q/image/upload/v1790396723/bgimageherosection_vx2gme.jpg')",
+              "url('https://res.cloudinary.com/yy5fen2q/image/upload/v1790581452/tampilan_r00o1x.png')",
             backgroundPosition: isMobile ? "50% center" : "35% center"
           }}
         />
