@@ -107,6 +107,23 @@ h4 {
     transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* ============ Scroll-driven timeline (zigzag use case rows) ============ */
+.timeline-row {
+  opacity: calc(0.15 + 0.85 * var(--row-p, 0));
+  transform: scale(calc(0.92 + 0.08 * var(--row-p, 0)));
+  will-change: opacity, transform;
+}
+
+.timeline-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: var(--line-h, 0px);
+  transform-origin: top;
+  transform: translateY(var(--line-top, 0px)) scaleY(var(--line-p, 0));
+  will-change: transform;
+}
+
 /* Brand-tinted drop shadow used behind product photos */
 .product-shadow {
   filter: drop-shadow(0 28px 32px rgb(244 81 30 / 0.16))
@@ -227,6 +244,40 @@ h4 {
   color: transparent;
 }
 
+/* Orange fading into a warm white — for hero headlines on dark scrims.
+   No CSS filter here on purpose: `filter` + `background-clip: text`
+   splits the paint layer and only the shadow shows up (dark text). */
+/* Hero headline gradient. On mobile it sits on the dark scrim so it fades
+   into a warm white; on desktop the scrim is gone, so it falls back to the
+   classic orange ramp. Kept in one class (not a `md:` variant) because these
+   custom rules are unlayered and would otherwise beat any Tailwind utility. */
+.text-gradient-hero {
+  background-image: linear-gradient(
+    115deg,
+    #ff8f3a 0%,
+    #ffa257 20%,
+    #ffbe7d 42%,
+    #ffdbb0 62%,
+    #fff0e0 80%,
+    #ffffff 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (min-width: 768px) {
+  .text-gradient-hero {
+    background-image: linear-gradient(
+      115deg,
+      #e23b12 0%,
+      #f4511e 40%,
+      #fb7238 75%,
+      #ffb066 100%
+    );
+  }
+}
+
 .glass {
   background: rgb(255 255 255 / 0.72);
   -webkit-backdrop-filter: blur(18px) saturate(170%);
@@ -316,5 +367,12 @@ h4 {
     opacity: 1;
     transform: none;
     transition: none;
+  }
+  .timeline-row {
+    opacity: 1;
+    transform: none;
+  }
+  .timeline-fill {
+    transform: translateY(var(--line-top, 0px)) scaleY(1);
   }
 }

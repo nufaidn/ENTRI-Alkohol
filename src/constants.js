@@ -10,6 +10,19 @@ const encode = (text) => encodeURIComponent(text);
 export const waLink = (message = DEFAULT_MESSAGE) =>
   `${WA_BASE}?text=${encode(message)}`;
 
+const CLOUDINARY_BREAKPOINTS = [640, 960, 1280];
+
+/** Appends Cloudinary delivery transforms so we never ship the 2MB original. */
+export const cloudinary = (url, width) => {
+  const transform = `f_auto,q_auto:eco,c_limit,w_${width}`;
+  return url.replace("/upload/", `/upload/${transform}/`);
+};
+
+export const cloudinarySrcSet = (url) =>
+  CLOUDINARY_BREAKPOINTS.map(
+    (w) => `${cloudinary(url, w)} ${w}w`
+  ).join(", ");
+
 export const NAV_LINKS = [
   { label: "Beranda", href: "#top" },
   { label: "Produk", href: "#produk" },
