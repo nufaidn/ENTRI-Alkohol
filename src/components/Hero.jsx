@@ -133,7 +133,7 @@ function HeroDesktop() {
           style={{
             backgroundImage:
               "url('https://res.cloudinary.com/yy5fen2q/image/upload/v1790581452/tampilan_r00o1x.png')",
-            backgroundPosition: "100% center"
+            backgroundPosition: "100% 30px"
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-wool-50/25 via-transparent to-transparent" />
